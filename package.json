@@ -10,6 +10,7 @@
     "aurelia-framework": "^1.0.0-rc.1.0.0",
     "aurelia-history-browser": "^1.0.0-rc.1.0.0",
     "aurelia-logging-console": "^1.0.0-rc.1.0.0",
+    "aurelia-polyfills": "^1.0.0-rc.1.0.0",
     "aurelia-router": "^1.0.0-rc.1.0.0",
     "aurelia-templating-binding": "^1.0.0-rc.1.0.0",
     "aurelia-templating-resources": "^1.0.0-rc.1.0.0",
