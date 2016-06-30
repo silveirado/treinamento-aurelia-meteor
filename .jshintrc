@@ -149,15 +149,6 @@
       "Buffer": false,
 
       // Collections
-      "Convidados": true,
-      "Eventos": true,
-      "Search": true,
-      "ConvidadoOffLine": true,
-      "Leads": true,
-      "Estados": true,
-      "Publicacoes": true,
-      "ComprasEventos": true,
-      "Contatos": true,
-      "Depoimentos": true
+      "Tarefas": true
     }
 }

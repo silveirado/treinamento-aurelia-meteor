@@ -1,0 +1,5 @@
+.tarefa-completa {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #ccc;
+}

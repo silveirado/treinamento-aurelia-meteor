@@ -7,8 +7,8 @@ aureliaBootstrapper
     .bootstrap(aurelia => {
         aurelia
             .use
-            .standardConfiguration();
-    				//.developmentLogging();
+            .standardConfiguration()
+    				.developmentLogging();
         aurelia
             .start()
             .then(() => aurelia.setRoot('client/main', document.body));

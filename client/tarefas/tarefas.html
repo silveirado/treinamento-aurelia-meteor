@@ -1,0 +1,32 @@
+<template>
+  <div class="panel panel-default">
+    <div class="panel-heading">Nova Tarefa</div>
+    <div class="panel-body">
+      <form submit.delegate="adicionar()" class="form-inline">
+        <div class="form-group">
+          <label for="tarefa">Nova Tarefa: </label>
+          <input id="tarefa" value.bind="novaTarefa.texto" type="text" class="form-control"  placeholder="Nova Tarefa">
+          <!--p class="help-block">Help text here.</p -->
+        </div>
+        <button type="submit" class="btn btn-default right-align">Adicionar</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Tarefas do ${usuario}
+      <button type="button" class="btn btn-danger" click.delegate="limpar()">Limpar</button>
+    </div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <li repeat.for="tarefa of tarefas" class="list-group-item ${tarefa.concluida ? 'tarefa-completa' : ''}">
+        <input type="checkbox" checked.bind="tarefa.concluida" change.delegate="concluir(tarefa)">
+        ${tarefa.texto}
+      </li>
+    </ul>
+
+  </div>
+</div>
+</template>
