@@ -1,3 +1,6 @@
 Meteor.publish("tarefas", function(){
-  return Tarefas.find();
+  if(!this.userId) {
+    throw new Meteor.Error(403, "Usuário deve estar logado");
+  }
+  return Tarefas.find({"userId": this.userId});
 });

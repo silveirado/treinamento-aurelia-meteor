@@ -20,3 +20,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 sdenis:static-raw-html
 fourseven:scss
 less
+accounts-password
+alanning:roles

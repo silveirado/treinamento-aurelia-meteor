@@ -2,11 +2,26 @@
   <div class="panel panel-default">
     <div class="panel-heading">Nova Tarefa</div>
     <div class="panel-body">
-      <form submit.delegate="adicionar()" class="form-inline">
-        <div class="form-group">
-          <label for="tarefa">Nova Tarefa: </label>
+      <form submit.delegate="adicionar()">
+        <div class="form-group ${erros.texto ? 'has-error' : ''}">
+          <label for="tarefa" class="control-label">Nova Tarefa: </label>
           <input id="tarefa" value.bind="novaTarefa.texto" type="text" class="form-control"  placeholder="Nova Tarefa">
+          <p class="help-block" repeat.for="erro of erros.texto" if.bind="erros.texto">${erro}</p>
+        </div>
+        <div class="form-group">
+          <label for="horario" class="control-label">Horario: </label>
+          <input id="tarefa" value.bind="novaTarefa.horario" type="text" class="form-control"  placeholder="Horario">
           <!--p class="help-block">Help text here.</p -->
+        </div>
+        <div class="form-group ${erros.prioridade ? 'has-error' : ''}">
+          <label for="tarefa" class="control-label">Prioridade: </label>
+          <select id="prioridade" value.bind="novaTarefa.prioridade" class="form-control">
+            <option>Selecione a prioridade</option>
+            <option value="0">Alta</option>
+            <option value="1">Media</option>
+            <option value="2">baixa</option>
+          </select>
+          <p class="help-block" repeat.for="erro of erros.prioridade" if.bind="erros.prioridade">${erro}</p>
         </div>
         <button type="submit" class="btn btn-default right-align">Adicionar</button>
       </form>
@@ -23,7 +38,8 @@
     <ul class="list-group">
       <li repeat.for="tarefa of tarefas" class="list-group-item ${tarefa.concluida ? 'tarefa-completa' : ''}">
         <input type="checkbox" checked.bind="tarefa.concluida" change.delegate="concluir(tarefa)">
-        ${tarefa.texto}
+        <i style="font-size: 2em;" class="fa fa-circle fa-2x ${tarefa.prioridade == 0 ? 'text-danger' : tarefa.prioridade == 1 ? 'text-warning' : 'text-success'}"></i>
+        ${tarefa.texto} - ${tarefa.horario}
       </li>
     </ul>
 

@@ -17,7 +17,8 @@
     "aurelia-templating-router": "^1.0.0-rc.1.0.0",
     "bootstrap": "^3.3.6",
     "lodash": "^4.13.1",
-    "meteor-node-stubs": "~0.2.0"
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.13.0"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.10.2",

@@ -1,0 +1,36 @@
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-md-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">Informe suas credenciais</div>
+          <form submit.delegate="login()">
+          <div class="panel-body">
+              <div class="form-group ${erros.email ? 'has-error' : ''}">
+                <label for="exampleInputEmail1" class="control-label">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value.bind="usuario.email">
+                <p class="help-block" repeat.for="erro of erros.email" if.bind="erros.email">${erro}</p>
+              </div>
+              <div class="form-group ${erros.senha ? 'has-error' : ''}">
+                <label for="exampleInputPassword1" class="control-label">Senha</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" value.bind="usuario.senha">
+                <p class="help-block" repeat.for="erro of erros.senha" if.bind="erros.senha">${erro}</p>
+              </div>
+              <div class="form-group ${erros.confirmacaoSenha ? 'has-error' : ''}" if.bind="usuario.novoCadastro">
+                <label for="exampleInputPassword2" class="control-label">Confirmação Senha</label>
+                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="ConfirmacaoSenha" value.bind="usuario.confirmacaoSenha">
+                <p class="help-block" repeat.for="erro of erros.confirmacaoSenha" if.bind="erros.confirmacaoSenha">${erro}</p>
+              </div>
+          </div>
+          <div class="panel-footer">
+              <button type="submit" class="btn btn-default">Entrar</button>
+              <button type="button" class="btn btn-info" click.delegate="usuario.novoCadastro = true" if.bind="!usuario.novoCadastro">Cadastrar</button>
+
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>
