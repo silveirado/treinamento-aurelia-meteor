@@ -18,7 +18,9 @@
     "bootstrap": "^3.3.6",
     "lodash": "^4.13.1",
     "meteor-node-stubs": "~0.2.0",
-    "moment": "^2.13.0"
+    "moment": "^2.13.0",
+    "font-awesome": "^4.6.3",
+    "validate.js": "^0.10.0"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.10.2",
