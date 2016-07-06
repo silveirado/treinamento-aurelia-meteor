@@ -10,7 +10,8 @@ Tarefas.allow({
     return userId;
   },
   update: function(userId, doc, fieldNames, modifier){
-    modifier.updateAt = moment().toDate();
+    set = (modifier.$set) ? modifier.$set : modifier.$unset;
+    set.updateAt = moment().toDate();
     return userId;
   },
   remove: function(userId){

@@ -8,18 +8,13 @@
           <input id="tarefa" value.bind="novaTarefa.texto" type="text" class="form-control"  placeholder="Nova Tarefa">
           <p class="help-block" repeat.for="erro of erros.texto" if.bind="erros.texto">${erro}</p>
         </div>
-        <div class="form-group">
-          <label for="horario" class="control-label">Horario: </label>
-          <input id="tarefa" value.bind="novaTarefa.horario" type="text" class="form-control"  placeholder="Horario">
-          <!--p class="help-block">Help text here.</p -->
-        </div>
         <div class="form-group ${erros.prioridade ? 'has-error' : ''}">
           <label for="tarefa" class="control-label">Prioridade: </label>
           <select id="prioridade" value.bind="novaTarefa.prioridade" class="form-control">
             <option>Selecione a prioridade</option>
             <option value="0">Alta</option>
             <option value="1">Media</option>
-            <option value="2">baixa</option>
+            <option value="2">Baixa</option>
           </select>
           <p class="help-block" repeat.for="erro of erros.prioridade" if.bind="erros.prioridade">${erro}</p>
         </div>
@@ -30,16 +25,16 @@
 
 
   <div class="panel panel-default">
-    <div class="panel-heading">
+    <div class="panel panel-heading">
       Tarefas do ${usuario}
-      <button type="button" class="btn btn-danger" click.delegate="limpar()">Limpar</button>
+      <button type="button" style="height: 26px; padding-top: 1px; padding-botton: 0; padding-left: 3; padding-right: 3;" class="btn btn-danger pull-right" click.delegate="limpar()">Limpar</button>
     </div>
   <div class="panel-body">
     <ul class="list-group">
       <li repeat.for="tarefa of tarefas" class="list-group-item ${tarefa.concluida ? 'tarefa-completa' : ''}">
         <input type="checkbox" checked.bind="tarefa.concluida" change.delegate="concluir(tarefa)">
         <i style="font-size: 2em;" class="fa fa-circle fa-2x ${tarefa.prioridade == 0 ? 'text-danger' : tarefa.prioridade == 1 ? 'text-warning' : 'text-success'}"></i>
-        ${tarefa.texto} - ${tarefa.horario}
+        ${tarefa.texto}
       </li>
     </ul>
 

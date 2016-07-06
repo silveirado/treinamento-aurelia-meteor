@@ -40,7 +40,7 @@ export class TarefasView {
   }
 
   get usuario() {
-    return 'Silveira';
+    return Meteor.user().username;
   }
 
   adicionar() {
@@ -77,13 +77,9 @@ export class TarefasView {
 
   limpar() {
     if (this.tarefas && this.tarefas.length) {
-      this.tarefas.forEach(t => {
-        if (t.concluida) {
-          Tarefas.remove({
-            "_id": t._id
-          });
-        }
-      })
+      let ids = _(this.tarefas).filter(t => t.concluida).map(t => t._id).value();
+      Meteor.call("removeBatch", ids);
     }
   }
+
 }
