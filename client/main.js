@@ -8,7 +8,7 @@ export class App {
     config.map([{
       route: ['', 'home'],
       name: 'home',
-      moduleId: './home',
+      moduleId: './home/home',
       nav: true,
       title: 'Home'
     }, {
